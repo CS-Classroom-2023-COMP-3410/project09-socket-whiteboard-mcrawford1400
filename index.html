@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realtime Collaborative Whiteboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Collaborative Whiteboard</h1>
+    
+    <div class="controls">
+      <div class="color-picker">
+        <label for="color-input">Select Color:</label>
+        <input type="color" id="color-input" value="#000000">
+      </div>
+      
+      <div class="brush-size">
+        <label for="brush-size">Brush Size:</label>
+        <input type="range" id="brush-size" min="1" max="20" value="5">
+        <span id="brush-size-display">5</span>px
+      </div>
+      
+      <button id="clear-button">Clear Board</button>
+    </div>
+    
+    <div class="canvas-container">
+      <canvas id="whiteboard"></canvas>
+    </div>
+    
+    <div class="status">
+      <p>Connection: <span id="connection-status">Disconnected</span></p>
+      <p>Active Users: <span id="user-count">0</span></p>
+    </div>
+  </div>
+  
+  <script src="/js/socket.io.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
